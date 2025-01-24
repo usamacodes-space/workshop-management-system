@@ -1,0 +1,623 @@
+{
+	"info": {
+		"_postman_id": "21743b8e-817a-4435-aa98-f39a305ad415",
+		"name": "Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41513796"
+	},
+	"item": [
+		{
+			"name": "register-mentor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Email</th>\r",
+							"        <th>Role ID</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.user.id}}</td>\r",
+							"        <td>{{response.user.name}}</td>\r",
+							"        <td>{{response.user.email}}</td>\r",
+							"        <td>{{response.user.role_id}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Usama Shafique\",\r\n  \"email\": \"me@usamacodes.space\",\r\n  \"password\": \"password123\",\r\n  \"role_id\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				},
+				"description": "usama tokken : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc0NjgzOSwiZXhwIjoxNzM3NzUwNDM5fQ.0zmnAe8R8ResInSzFu9Lx8rOrRFJIL3wTRDIkCpz0pU"
+			},
+			"response": []
+		},
+		{
+			"name": "register-student/learner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Email</th>\r",
+							"        <th>Role ID</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.user.id}}</td>\r",
+							"        <td>{{response.user.name}}</td>\r",
+							"        <td>{{response.user.email}}</td>\r",
+							"        <td>{{response.user.role_id}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Student Name 1 \",\r\n  \"email\": \"imstudent@one.com\",\r\n  \"password\": \"password123\",\r\n  \"role_id\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-preferences",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>User ID</th>\r",
+							"        <th>Name</th>\r",
+							"        <th>Email</th>\r",
+							"        <th>Password</th>\r",
+							"        <th>Role ID</th>\r",
+							"        <th>Notification Opt In</th>\r",
+							"        <th>Created At</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response.user.user_id}}</td>\r",
+							"        <td>{{response.user.name}}</td>\r",
+							"        <td>{{response.user.email}}</td>\r",
+							"        <td>{{response.user.password}}</td>\r",
+							"        <td>{{response.user.role_id}}</td>\r",
+							"        <td>{{#if response.user.notification_opt_in}}Yes{{else}}No{{/if}}</td>\r",
+							"        <td>{{response.user.created_at}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return { response: pm.response.json() }\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"notifications_enabled\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/me/preferences",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"me",
+						"preferences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-workshops",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"React Basics\",\r\n  \"description\": \"An introductory workshop on React.js\",\r\n  \"start_date\": \"2025-02-01T10:00:00Z\",\r\n  \"end_date\": \"2025-02-01T14:00:00Z\",\r\n  \"location\": \"Online\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/workshops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"workshops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-workshop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc0NjgzOSwiZXhwIjoxNzM3NzUwNDM5fQ.0zmnAe8R8ResInSzFu9Lx8rOrRFJIL3wTRDIkCpz0pU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get-workshop-detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc0NjgzOSwiZXhwIjoxNzM3NzUwNDM5fQ.0zmnAe8R8ResInSzFu9Lx8rOrRFJIL3wTRDIkCpz0pU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/workshops/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"workshops",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all-workshops",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc0NjgzOSwiZXhwIjoxNzM3NzUwNDM5fQ.0zmnAe8R8ResInSzFu9Lx8rOrRFJIL3wTRDIkCpz0pU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/workshops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"workshops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-workshop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc0NjgzOSwiZXhwIjoxNzM3NzUwNDM5fQ.0zmnAe8R8ResInSzFu9Lx8rOrRFJIL3wTRDIkCpz0pU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/workshops/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"workshops",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-activity-in-workshop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Activity 2\",\r\n  \"description\": \"This is a test activity.\",\r\n  \"start_time\": \"2025-01-30T10:00:00.000Z\",\r\n  \"end_time\": \"2025-01-30T12:00:00.000Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/activities/workshops/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activities",
+						"workshops",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-activity-in-workshop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Activity Title\",\r\n  \"description\": \"Updated description for this activity.\",\r\n  \"start_time\": \"2025-02-01T10:00:00\",\r\n  \"end_time\": \"2025-02-01T12:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/activities/5/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activities",
+						"5",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-activity-in-workshop Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Activity Title\",\r\n  \"description\": \"Updated description for this activity.\",\r\n  \"start_time\": \"2025-02-01T10:00:00\",\r\n  \"end_time\": \"2025-02-01T12:00:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/activities/5/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"activities",
+						"5",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enrollments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6Imltc3R1ZGVudEBvbmUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3Mzc3NTMzNzUsImV4cCI6MTc0MDk1MDE3NX0.5vZyLhwYk_6O5Bxs01Lh8n3iPmdyQCGD8ztpaZcQAo4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/enrollments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enrollments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6Imltc3R1ZGVudEBvbmUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3Mzc3NTMzNzUsImV4cCI6MTc0MDk1MDE3NX0.5vZyLhwYk_6O5Bxs01Lh8n3iPmdyQCGD8ztpaZcQAo4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/enrollments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"enrollments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Student tokken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6Imltc3R1ZGVudEBvbmUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3Mzc3NTMzNzUsImV4cCI6MTc0MDk1MDE3NX0.5vZyLhwYk_6O5Bxs01Lh8n3iPmdyQCGD8ztpaZcQAo4",
+			"type": "default"
+		},
+		{
+			"key": "Mentor Tokken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im1lQHVzYW1hY29kZXMuc3BhY2UiLCJyb2xlSWQiOjEsImlhdCI6MTczNzc1MTc3NiwiZXhwIjoxNzQwOTQ4NTc2fQ.ZbFiGG0wB63jHZjGKhmQeUDqLIN9-Xvfpu2P_wTMLJQ",
+			"type": "default"
+		}
+	]
+}
